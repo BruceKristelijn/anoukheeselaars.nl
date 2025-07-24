@@ -3,6 +3,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
+import ZAB from './views/ZAB.vue'
 
 export const routes = [
   { 
@@ -30,6 +31,14 @@ export const routes = [
       activeColor: "#B93056"
     }
   },
+  { path: '/zab', 
+    component: ZAB, 
+    name: "ZAB.",
+    meta: {
+      backgroundColor: "#872B8E",
+      activeColor: "#882C8F"
+    }
+  }
 ]
 
 const router = createRouter({
