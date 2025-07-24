@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --body-bg-old: white;
+  --body-bg: white;
+  --active-url: black;
+}
+
+body {
+  background: var(--body-bg-old);
+  background: var(--body-bg);
+  transition: background-color 1s ease;
+}
+
+nav a {
+  transition: all 0.5s ease-out;
+}
+
+.active {
+  color: var(--active-url);
+}
