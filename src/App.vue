@@ -46,7 +46,7 @@ watch(
   <nav class="w-full p-5 mt-10 items-center bg-white flex content-center justify-around">
     <RouterLink v-for="route in routes" :to="route.path">{{ route.name }}</RouterLink>
   </nav>
-  <main class="container mx-auto px-4 max-w-[1000px] text-white">
+  <main class="container mx-auto max-w-[1000px] text-white">
     <RouterView />
   </main>
 </template>

@@ -8,17 +8,20 @@ const { color, image } = defineProps(['color', 'image'])
 
 <template>
   <div class="page-wrapper">
-    <slot></slot>
+    <img class="w-[100vw] z-[0]" :src="image">
+    <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10]">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.page-wrapper {
+img {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  min-height: 100vh;
-  z-index: 0;
+    left: 0;
+    right: 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    z-index: 0;
 }
 </style>

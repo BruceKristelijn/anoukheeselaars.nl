@@ -1,7 +1,7 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 import HomeView from './views/HomeView.vue'
-import SteklekView from './views/StekplekView.vue'
+import MaatwerkOnline from './views/MaatwerkOnline.vue'
 
 export const routes = [
   { 
@@ -14,11 +14,11 @@ export const routes = [
     }
   },
   { path: '/stekplek', 
-    component: SteklekView, 
-    name: "Stekplek",
+    component: MaatwerkOnline, 
+    name: "Maatwerk Obline",
     meta: {
-      backgroundColor: "#7D60FF",
-      activeColor: "#6047CC"
+      backgroundColor: "#166D72",
+      activeColor: "#176E73"
     }
   },
 ]
