@@ -2,6 +2,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 
 import HomeView from './views/HomeView.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
+import SavannaDevelopments from './views/SavannaDevelopments.vue'
 
 export const routes = [
   { 
@@ -13,12 +14,20 @@ export const routes = [
       activeColor: "#F37A24"
     }
   },
-  { path: '/stekplek', 
+  { path: '/maatwerkonline', 
     component: MaatwerkOnline, 
-    name: "Maatwerk Obline",
+    name: "Maatwerk Online",
     meta: {
       backgroundColor: "#166D72",
       activeColor: "#176E73"
+    }
+  },
+  { path: '/savannadevelopments', 
+    component: SavannaDevelopments, 
+    name: "Savanna Developments",
+    meta: {
+      backgroundColor: "#B93056",
+      activeColor: "#B93056"
     }
   },
 ]

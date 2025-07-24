@@ -10,7 +10,7 @@ const { color, image, logo, organisation, work, side_description, description } 
 <template>
   <div class="page-wrapper">
     <img class="header_img w-[100vw] z-[0]" :src="image">
-    <div class="relative flex flex-col gap-10 pt-[20vw] pb-20 z-[10]">
+    <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10]">
       <SimpleCard title="" class="flex flex-col gap-0">
         <div class="flex flex-row h-[40px] mb-5">
           <img class="h-full mx-auto" :src="logo">

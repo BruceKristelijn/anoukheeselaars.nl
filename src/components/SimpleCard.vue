@@ -5,7 +5,7 @@ const { title } = defineProps(['title'])
 
 <template>
     <div class="text-black bg-white p-15 rounded-xl card">
-        <h3 class="mb-5">{{ title }}</h3>
+        <h3 v-if="title" class="mb-5">{{ title }}</h3>
         <slot></slot>
     </div>
 </template>
