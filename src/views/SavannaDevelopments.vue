@@ -41,7 +41,7 @@ const showcases = [{
                     <div class="pr-20">
                         <img :src="showcase.image" class="rounded-xl">
                     </div>
-                    <div>
+                    <div class="flex flex-col justify-center">
                         <p class="text-[17px] mb-2">
                             <strong>{{ showcase.title }}</strong> {{ showcase.organisation }}
                         </p>

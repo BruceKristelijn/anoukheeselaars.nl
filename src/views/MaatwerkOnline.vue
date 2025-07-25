@@ -48,7 +48,7 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
 
         <SimpleCard title="Re-design presentatie template">
             <div class="grid grid-cols-3 justify-between gap-5">
-                <img v-for="slide in slides" :src="slide">
+                <img v-for="slide in slides" :src="slide" class="slide">
             </div>
         </SimpleCard>
 
@@ -68,3 +68,9 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
         </SimpleCard>
     </PageWrapper>
 </template>
+
+<style scoped>
+.slide {
+    box-shadow: 0px 2.58px 11.2px 0px #0000001A;
+}
+</style>

@@ -2,8 +2,10 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 
 import HomeView from './views/HomeView.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
+import NRV from './views/NRV.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
 import ZAB from './views/ZAB.vue'
+import BooksByAni from './views/BooksByAni.vue'
 
 export const routes = [
   { 
@@ -23,6 +25,14 @@ export const routes = [
       activeColor: "#176E73"
     }
   },
+  { path: '/nrv', 
+    component: NRV, 
+    name: "NRV",
+    meta: {
+      backgroundColor: "linear-gradient(180deg, #E34700 0%, #FF5000 100%)",
+      activeColor: "#E34800"
+    }
+  },
   { path: '/savannadevelopments', 
     component: SavannaDevelopments, 
     name: "Savanna Developments",
@@ -37,6 +47,14 @@ export const routes = [
     meta: {
       backgroundColor: "#872B8E",
       activeColor: "#882C8F"
+    }
+  },
+  { path: '/booksbyani', 
+    component: BooksByAni, 
+    name: "Books by Ani",
+    meta: {
+      backgroundColor: "linear-gradient(103.01deg, #8EC9C8 9.39%, #8FCDCC 92.19%)",
+      activeColor: "#8ECAC9"
     }
   }
 ]
