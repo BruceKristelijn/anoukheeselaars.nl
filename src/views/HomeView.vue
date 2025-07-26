@@ -22,27 +22,33 @@ import mijn_werk_booksbyani_logo from '../assets/mijn_werk_booksbyani_logo.png'
 const work = [{
     image: mijn_werk_stepplek_image,
     logo: mijn_werk_stepplek_logo,
-    text: "UI/UX Design"
+    text: "UI/UX Design",
+    route_link: "stekplek"
 },{
     image: mijn_werk_maatwerkonline_image,
     logo: mijn_werk_maatwerkonline_logo,
-    text: "Visual Design"
+    text: "Visual Design",
+    route_link: "maatwerkonline"
 },{
     image: mijn_werk_nrv_image,
     logo: mijn_werk_nrv_logo,
-    text: "UI/UX Design"
+    text: "UI/UX Design",
+    route_link: "nrv"
 },{
     image: mijn_werk_savannadevelopments_image,
     logo: mijn_werk_savannadevelopments_logo,
-    text: "Merkidentiteit"
+    text: "Merkidentiteit",
+    route_link: "savannadevelopments"
 },{
     image: mijn_werk_zab_image,
     logo: mijn_werk_zab_logo,
-    text: "APP-ontwerp"
+    text: "APP-ontwerp",
+    route_link: "zab"
 },{
     image: mijn_werk_booksbyani_image,
     logo: mijn_werk_booksbyani_logo,
-    text: "Concept Voorstel"
+    text: "Concept Voorstel",
+    route_link: "booksbyani"
 }]
 
 </script>
@@ -68,7 +74,7 @@ const work = [{
         </div>
 
         <div class="grid grid-cols-3 p-1 gap-5">
-            <MyWorkCard v-for="(entry, index) in work" :image="entry.image" :logo="entry.logo" :text="entry.text" :style="{ animationDelay: `${index * 0.1}s` }" class="bounce-enter-active"></MyWorkCard>
+            <MyWorkCard v-for="(entry, index) in work" :image="entry.image" :route_link="entry.route_link" :logo="entry.logo" :text="entry.text" :style="{ animationDelay: `${index * 0.1}s` }" class="bounce-enter-active"></MyWorkCard>
         </div>
 
         <div>

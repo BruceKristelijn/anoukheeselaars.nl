@@ -1,6 +1,7 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 import HomeView from './views/HomeView.vue'
+import Stekplek from './views/Stekplek.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
 import NRV from './views/NRV.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
@@ -15,6 +16,14 @@ export const routes = [
     meta: {
       backgroundColor: "linear-gradient(123.45deg, #9138BC -4.12%, #5673C5 43.18%, #319EC4 85.66%)",
       activeColor: "#F37A24"
+    }
+  },
+  { path: '/stekplek', 
+    component: Stekplek, 
+    name: "Stekplek",
+    meta: {
+      backgroundColor: "linear-gradient(180deg, #5E46CA 0%, #7D60FF 100%)",
+      activeColor: "#6047CC"
     }
   },
   { path: '/maatwerkonline', 
@@ -61,7 +70,7 @@ export const routes = [
 
 const router = createRouter({
     linkActiveClass: 'active',
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 export {

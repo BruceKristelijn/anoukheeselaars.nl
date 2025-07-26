@@ -47,7 +47,9 @@ watch(
     <RouterLink v-for="route in routes" :to="route.path">{{ route.name }}</RouterLink>
   </nav>
   <main class="container mx-auto max-w-[1100px] text-white">
-    <RouterView />
+    <Transition>
+      <RouterView />
+    </Transition>
   </main>
 </template>
 
@@ -69,5 +71,15 @@ nav a {
 .active {
   color: var(--active-url);
   font-weight: 700;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
