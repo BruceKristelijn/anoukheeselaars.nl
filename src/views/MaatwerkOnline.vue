@@ -41,13 +41,13 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
     <PageWrapper :image="headerimage" :logo="mijn_werk_maatwerkonline_logo" organisation="Maatwerk Online" work="Visual & UI/UX design" side_description="Maatwerk Online is gericht op alle aspecten van online marketing. Naast het ontwerpen van websites die perfect aansluiten bij de specifieke wensen van de klanten, zorgen ze voor een goede vindbaarheid van websites en optimaliseren ze voortdurend de conversieratio." description="Ook zijn ze betrokken bij het opzetten, beheren en optimaliseren van advertentiecampagnes, zoals Google AdWords en Facebook-campagnes. Daarnaast verlenen zij diensten met betrekking tot zoekmachine adverteren, zoekmachine optimalisatie, social media adverteren, conversieoptimalisatie, webdevelopment en Amazon marketing.">
 
         <SimpleCard title="Abri's">
-            <div class="flex flex-row justify-between">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row  justify-between">
                 <img v-for="abri in abris" :src="abri">
             </div>
         </SimpleCard>
 
         <SimpleCard title="Re-design presentatie template">
-            <div class="grid grid-cols-3 justify-between gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5">
                 <img v-for="slide in slides" :src="slide" class="slide">
             </div>
         </SimpleCard>

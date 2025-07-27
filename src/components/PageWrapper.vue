@@ -15,8 +15,8 @@
         <div class="flex flex-row h-[40px] mb-5">
           <img class="mx-auto" :src="logo">
         </div>
-        <div class="grid grid-cols-3 justify-between gap-5 mt-7">
-          <div class="col-span-1 border-r-1	border-slate-500">
+        <div class="grid grid-cols-1 md:grid-cols-3 justify-between gap-5 mt-7">
+          <div class="col-span-2 md:col-span-1 border-r-0 md:border-r-1 border-b-1 md:border-b-0 border-slate-500 pb-3 md:pb-0">
             <p><strong>Bedrijf:</strong> {{ organisation }}</p>
             <p><strong>Werk:</strong> {{ work }}</p>
           </div>
