@@ -39,6 +39,16 @@
     }
   );
 
+  watch(
+    () => route.name,
+    (newName) => {
+      document.title = "Anouk Heeselaars | " + newName;
+    },
+    {
+      immediate: true
+    }
+  );
+
   const images = ref({})
   const isLoaded = ref(false)
 
