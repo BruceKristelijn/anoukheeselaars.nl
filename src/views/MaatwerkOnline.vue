@@ -21,13 +21,22 @@ import slide7 from '../assets/maatwerkonline/slides/maatwerkonline_slides_7.png'
 import slide8 from '../assets/maatwerkonline/slides/maatwerkonline_slides_8.png'
 import slide9 from '../assets/maatwerkonline/slides/maatwerkonline_slides_9.png'
 
-// Ads
-import showcase1 from '../assets/maatwerkonline/Maatjes+logo+tekst_160x600.png'
-import showcase2 from '../assets/maatwerkonline/Maatjes+logo+tekst_300x600.png'
-import showcase3 from '../assets/maatwerkonline/Maatjes+logo+tekst_300x600-1.png'
-import showcase4 from '../assets/maatwerkonline/Maatjes+logo+tekst_300x250.png'
-import showcase5 from '../assets/maatwerkonline/Maatjes+logo+tekst_300x250-1.png'
-import showcase6 from '../assets/maatwerkonline/Maatjes+logo+tekst_728x90.png'
+const loadShowcaseImage = async (imageName) => {
+  try {
+    const module = await import(`../assets/maatwerkonline/${imageName}?inline`)
+    return module.default
+  } catch (error) {
+    console.warn(`Failed to load image: ${imageName}`)
+    return null
+  }
+}
+
+const showcase1 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_160x600.png?inline')
+const showcase2 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x600.png?inline')
+const showcase3 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x600-1.png?inline')
+const showcase4 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x250.png?inline')
+const showcase5 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x250-1.png?inline')
+const showcase6 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_728x90.png?inline')
 
 // Logo
 import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
@@ -53,6 +62,9 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
         </SimpleCard>
 
         <SimpleCard title="Advertenties">
+            <p v-if="showcase1 == null && showcase2 == null && showcase3 == null && showcase4 == null && showcase5 == null">
+                De advertenties kunnen niet geladen worden. Dit kan komen door een eventuele adblocker.
+            </p>
             <div class="flex flex-col md:grid md:grid-cols-10 justify-between gap-5">
                 <div class="col-span-1 md:col-span-7 flex flex-col md:flex-row">
                     <img class="h-full object-cover p-1" :src="showcase1" />
