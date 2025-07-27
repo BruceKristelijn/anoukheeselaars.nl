@@ -127,7 +127,9 @@
   <main class="container mx-auto max-w-[1100px] text-white">
     <RouterView v-slot="{ Component }">
       <transition name="fade">
-        <component :is="Component" :key="route.fullPath" />
+        <Suspense>
+          <component :is="Component" :key="route.fullPath" />
+        </Suspense>
       </transition>
     </RouterView>
   </main>
