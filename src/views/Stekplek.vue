@@ -63,7 +63,7 @@
                     gemakkelijker in gebruik. Vanuit dit onderzoek zijn we de rechter variant hier onder verder gaan
                     uitwerken.
                 </p>
-                <div class="grid grid-cols-2 gap-20 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 p-4">
                     <img :src="prototype1">
                     <img :src="prototype2">
                 </div>
@@ -72,11 +72,11 @@
 
         <SimpleCard title="Uiteindelijk prototype">
             <div class="flex flex-col gap-10">
-                <div v-for="prototype in final_prototypes" class="grid grid-cols-2">
-                    <div class="pr-20">
+                <div v-for="prototype in final_prototypes" class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="lg:pr-20">
                         <video :src="prototype.video" class="rounded-xl" autoplay></video>
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-10 lg:mt-0">
                         <p class="text-[17px] mb-2">
                             <strong>{{ prototype.title }}</strong>
                         </p>
