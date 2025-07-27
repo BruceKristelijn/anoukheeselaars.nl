@@ -28,8 +28,8 @@ const table_entries = [
         :description="description">
 
         <SimpleCard>
-            <div class="w-full flex flex-row">
-                <img  class="flex-grow" :src="screens">
+            <div class="w-full flex flex-col md:flex-row">
+                <img  class="flex-grow mb-2 md:mb-0" :src="screens">
                 <img :src="screen1">
             </div>
         </SimpleCard>
@@ -44,7 +44,7 @@ const table_entries = [
             <p class="mb-5">
                 Om tot deze oplossing te komen, heb ik samen met mijn projectpartner een aantal verschillende ontwerpmethoden en -technieken gebruikt, die zijn hieronder te vinden:
             </p>
-            <div class="bg-[#F8F8F8] p-10 rounded-xl grid grid-cols-3">
+            <div class="bg-[#F8F8F8] p-5 md:p-10 rounded-xl grid grid-cols-1 md:grid-cols-3">
                 <div v-for="(entry, index) in table_entries" class="mb-2" :class="{ 'col-span-2': index % 2 === 1 }">
                     <div>
                         <p v-if="index % 2 === 0">

@@ -53,13 +53,13 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
         </SimpleCard>
 
         <SimpleCard title="Advertenties">
-            <div class="grid grid-cols-10 justify-between gap-5">
-                <div class="col-span-7 flex flex-row">
+            <div class="flex flex-col md:grid md:grid-cols-10 justify-between gap-5">
+                <div class="col-span-1 md:col-span-7 flex flex-col md:flex-row">
                     <img class="h-full object-cover p-1" :src="showcase1" />
                     <img class="h-full object-cover p-1" :src="showcase2" />
                     <img class="h-full object-cover p-1" :src="showcase3" />
                 </div>
-                <div class="ml-20 col-span-3">
+                <div class="md:ml-20 col-span-3">
                     <img class="object-cover p-1" :src="showcase4" />
                     <img class="object-cover p-1" :src="showcase5" />
                 </div>

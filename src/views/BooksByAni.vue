@@ -39,8 +39,8 @@
                 gepresenteerd.​
             </p>
             <div class="flex flex-col gap-10">
-                <div class="grid grid-cols-2">
-                    <div class="pr-20">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20">
                         <img :src="showcase1" class="rounded-xl">
                     </div>
                     <div class="flex flex-col justify-center">
@@ -57,8 +57,8 @@
 
         <SimpleCard title="Vernieuwde Instagram feed">
             <div class="flex flex-col gap-10">
-                <div class="grid grid-cols-2">
-                    <div class="pr-20">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20">
                         <img :src="showcase2" class="rounded-xl">
                     </div>
                     <div class="flex flex-col justify-center">
@@ -74,8 +74,8 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2">
-                    <div class="pr-20">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20">
                         <img :src="showcase3" class="rounded-xl">
                     </div>
                     <div class="flex flex-col justify-center">

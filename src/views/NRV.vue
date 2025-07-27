@@ -28,11 +28,11 @@
 
         <SimpleCard title="Uiteindelijk prototype">
             <div class="flex flex-col gap-10">
-                <div class="grid grid-cols-2">
-                    <div class="pr-20 flex flex-col justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20 flex flex-col justify-center">
                         <video class="rounded-xl" :src="prototype1" autoplay></video>
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-5 md:mt-0 ">
                         <p class="text-[17px] mb-2">
                             <strong>Transparantie</strong>
                         </p>
@@ -48,11 +48,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2">
-                    <div class="pr-20 flex flex-col justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20 flex flex-col justify-center">
                         <video class="rounded-xl" :src="prototype2" autoplay></video>
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-5 md:mt-0 ">
                         <p class="text-[17px] mb-2">
                             <strong>Gepersonaliseerd gemak</strong>
                         </p>
@@ -68,11 +68,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2">
-                    <div class="pr-20 flex flex-col justify-center">
-                        <video class="rounded-xl" :src="prototype3" autoplay></video>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20 flex flex-col justify-center">
+                        <video class="rounded-xl" :src="prototype3" autoplay loop></video>
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-5 md:mt-0">
                         <p class="text-[17px] mb-2">
                             <strong>Focus gemak</strong>
                         </p>
@@ -97,11 +97,11 @@
                 zichtbaar wordt zodra je erop klikt.
             </p>
             <div class="flex flex-col gap-10">
-                <div class="grid grid-cols-2">
-                    <div class="pr-20">
-                        <video class="rounded-xl" :src="old1" autoplay></video>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20">
+                        <video class="rounded-xl" :src="old1" autoplay loop></video>
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-5 md:mt-0">
                         <p class="text-[17px] mb-2">
                             <strong>Door ons aanbevolen</strong>
                         </p>
@@ -116,11 +116,11 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2">
-                    <div class="pr-20">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="md:pr-20">
                         <img :src="old2" class="rounded-xl">
                     </div>
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col justify-center mt-5 md:mt-0">
                         <p class="text-[17px] mb-2">
                             <strong>Vorige pagina</strong>
                         </p>
