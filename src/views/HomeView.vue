@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+
 import MyWorkCard from '../components/MyWorkCard.vue'
 
 // Header image
@@ -18,6 +20,7 @@ import mijn_werk_zab_logo from '../assets/mijn_werk_zab_logo.png'
 import mijn_werk_booksbyani_image from '../assets/mijn_werk_booksbyani_image.png'
 import mijn_werk_booksbyani_logo from '../assets/mijn_werk_booksbyani_logo.png'
 
+const contactRef = ref(null)
 
 const work = [{
     image: mijn_werk_stepplek_image,
@@ -51,6 +54,15 @@ const work = [{
     route_link: "booksbyani"
 }]
 
+const scroll_down_contact = () => {
+    if (contactRef.value) {
+        contactRef.value.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+}
+
 </script>
 
 <template>
@@ -62,7 +74,7 @@ const work = [{
                 <p>Door mijn specialisatie Human-Centered Design ben ik gedoken in de wereld van Visual Design. Ik vind
                     het heel interessant om bezig te zijn met het User interface design van zowel online platformen als
                     apps. </p>
-                <button class="text-[16px] btn">Contact</button>
+                <button class="text-[16px] btn cursor-pointer" @click="scroll_down_contact">Contact</button>
             </div>
             <div class="w-full col-span-2">
                 <img :src="anouk_heeselaars_home_foto">
@@ -77,7 +89,7 @@ const work = [{
             <MyWorkCard v-for="(entry, index) in work" :image="entry.image" :route_link="entry.route_link" :logo="entry.logo" :text="entry.text" :style="{ animationDelay: `${index * 0.1}s` }" class="bounce-enter-active mx-auto"></MyWorkCard>
         </div>
 
-        <div>
+        <div ref="contactRef">
             <h1 class="text-[51px] font-bold p-5">Contact.</h1>
         </div>
 
