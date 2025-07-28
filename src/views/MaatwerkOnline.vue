@@ -23,20 +23,20 @@ import slide9 from '../assets/maatwerkonline/slides/maatwerkonline_slides_9.png'
 
 const loadShowcaseImage = async (imageName) => {
   try {
-    const module = await import(`../assets/maatwerkonline/${imageName}?inline`)
+    const module = await import(`../assets/maatwerkonline/${imageName}?inline /* @vite-ignore */`)
     return module.default
   } catch (error) {
-    console.warn(`Failed to load image: ${imageName}`)
+    console.warn(`Failed to load image: ${imageName}: ${error}`)
     return null
   }
 }
 
-const showcase1 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_160x600.png?inline')
-const showcase2 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x600.png?inline')
-const showcase3 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x600-1.png?inline')
-const showcase4 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x250.png?inline')
-const showcase5 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_300x250-1.png?inline')
-const showcase6 = await loadShowcaseImage('../maatwerkonline/Maatjes+logo+tekst_728x90.png?inline')
+const showcase1 = await loadShowcaseImage('Maatjes+logo+tekst_160x600.png?inline') /* @vite-ignore */
+const showcase2 = await loadShowcaseImage('Maatjes+logo+tekst_300x600.png?inline') /* @vite-ignore */
+const showcase3 = await loadShowcaseImage('Maatjes+logo+tekst_300x600-1.png?inline') /* @vite-ignore */
+const showcase4 = await loadShowcaseImage('Maatjes+logo+tekst_300x250.png?inline') /* @vite-ignore */
+const showcase5 = await loadShowcaseImage('Maatjes+logo+tekst_300x250-1.png?inline') /* @vite-ignore */
+const showcase6 = await loadShowcaseImage('Maatjes+logo+tekst_728x90.png?inline') /* @vite-ignore */
 
 // Logo
 import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
