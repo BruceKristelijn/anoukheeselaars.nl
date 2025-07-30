@@ -68,63 +68,39 @@
 </script>
 
 <template>
-<nav class="w-full p-5 mt-10 bg-white">
+  <nav class="w-full p-5 bg-white fixed">
     <!-- Mobile hamburger button -->
     <div class="md:hidden flex justify-between items-center">
       <div class="font-semibold">{{ route.name }}</div>
-      <button 
-        @click="isNavOpen = !isNavOpen"
-        class="p-2 rounded-md hover:bg-gray-100 focus:outline-none"
-      >
+      <button @click="isNavOpen = !isNavOpen" class="p-2 rounded-md hover:bg-gray-100 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path 
-            :class="{ 'hidden': isNavOpen, 'inline-flex': !isNavOpen }"
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-          <path 
-            :class="{ 'hidden': !isNavOpen, 'inline-flex': isNavOpen }"
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M6 18L18 6M6 6l12 12"
-          />
+          <path :class="{ 'hidden': isNavOpen, 'inline-flex': !isNavOpen }" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path :class="{ 'hidden': !isNavOpen, 'inline-flex': isNavOpen }" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
 
     <!-- Desktop menu -->
     <div class="hidden md:flex items-center justify-around">
-      <RouterLink 
-        v-for="route in routes" 
-        :key="route.path"
-        :to="route.path"
-        class="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
-      >
+      <RouterLink v-for="route in routes" :key="route.path" :to="route.path"
+        class="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">
         {{ route.name }}
       </RouterLink>
     </div>
 
     <!-- Mobile menu -->
-    <div 
-      :class="{ 'block': isNavOpen, 'hidden': !isNavOpen }"
-      class="md:hidden mt-4 space-y-2 bg-white w-full absolute left-0 right-0 mt-[-1px] pt-2"
-    >
-      <RouterLink 
-        v-for="route in routes" 
-        :key="route.path"
-        :to="route.path"
-        @click="isNavOpen = false"
-        class="block px-4 py-3 rounded-md hover:bg-gray-100 transition-colors"
-      >
+    <div :class="{ 'block': isNavOpen, 'hidden': !isNavOpen }"
+      class="md:hidden mt-4 space-y-2 bg-white w-full absolute left-0 right-0 mt-[-1px] pt-2">
+      <RouterLink v-for="route in routes" :key="route.path" :to="route.path" @click="isNavOpen = false"
+        class="block px-4 py-3 rounded-md hover:bg-gray-100 transition-colors">
         {{ route.name }}
       </RouterLink>
     </div>
   </nav>
 
-  <main class="container mx-auto max-w-[1100px] text-white">
+  <main class="container mx-auto max-w-[1100px] text-white mt-40">
     <RouterView v-slot="{ Component }">
       <transition name="fade">
         <Suspense>
@@ -137,8 +113,9 @@
 
 <style scoped>
   nav {
-    position: relative;
+    position: fixed;
     font-family: 'Poppins';
+    top:40px;
     font-weight: 400;
     font-size: 17px;
     line-height: 100%;
