@@ -118,7 +118,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="md:pr-20">
-                        <img :src="old2" class="rounded-xl">
+                        <img :src="old2" class="rounded-xl shadow">
                     </div>
                     <div class="flex flex-col justify-center mt-5 md:mt-0">
                         <p class="text-[17px] mb-2">

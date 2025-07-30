@@ -29,8 +29,8 @@ const table_entries = [
 
         <SimpleCard>
             <div class="w-full flex flex-col md:flex-row">
-                <img  class="flex-grow mb-2 md:mb-0" :src="screens">
-                <img :src="screen1">
+                <img  class="flex-grow mb-2 md:mb-0 shadow" :src="screens">
+                <img class="shadow" :src="screen1">
             </div>
         </SimpleCard>
 

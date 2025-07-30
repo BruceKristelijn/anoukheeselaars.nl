@@ -51,13 +51,13 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
 
         <SimpleCard title="Abri's">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row  justify-between">
-                <img v-for="abri in abris" :src="abri">
+                <img v-for="abri in abris" :src="abri" class="shadow">
             </div>
         </SimpleCard>
 
         <SimpleCard title="Re-design presentatie template">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5">
-                <img v-for="slide in slides" :src="slide" class="slide">
+                <img v-for="slide in slides" :src="slide" class="slide shadow">
             </div>
         </SimpleCard>
 

@@ -41,7 +41,7 @@
             <div class="flex flex-col gap-10">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="md:pr-20">
-                        <img :src="showcase1" class="rounded-xl">
+                        <img :src="showcase1" class="rounded-xl shadow">
                     </div>
                     <div class="flex flex-col justify-center">
                         <p class="text-[17px] mb-2">
@@ -59,7 +59,7 @@
             <div class="flex flex-col gap-10">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="md:pr-20">
-                        <img :src="showcase2" class="rounded-xl">
+                        <img :src="showcase2" class="rounded-xl shadow">
                     </div>
                     <div class="flex flex-col justify-center">
                         <p class="text-[17px] mb-2">
@@ -76,7 +76,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="md:pr-20">
-                        <img :src="showcase3" class="rounded-xl">
+                        <img :src="showcase3" class="rounded-xl shadow">
                     </div>
                     <div class="flex flex-col justify-center">
                         <p class="text-[17px] mb-2">
