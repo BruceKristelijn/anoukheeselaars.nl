@@ -68,6 +68,10 @@
 </script>
 
 <template>
+
+  <div class="navblur w-full fixed">
+  </div>
+
   <nav class="w-full p-5 bg-white fixed">
     <!-- Mobile hamburger button -->
     <div class="md:hidden flex justify-between items-center">
@@ -112,7 +116,7 @@
 </template>
 
 <style scoped>
-  nav {
+  nav, .navblur {
     position: fixed;
     font-family: 'Poppins';
     top:40px;
@@ -121,6 +125,11 @@
     line-height: 100%;
     z-index: 99;
     height: 71.5px;
+  }
+
+  .navblur {
+    top: 0px;
+    backdrop-filter: blur(10px)
   }
 
   nav a {
