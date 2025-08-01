@@ -77,7 +77,7 @@ const scroll_down_contact = () => {
                 <button class="text-[16px] btn cursor-pointer" @click="scroll_down_contact">Contact</button>
             </div>
             <div class="w-full col-span-2">
-                <img :src="anouk_heeselaars_home_foto" class="shadow">
+                <img :src="anouk_heeselaars_home_foto" class="">
             </div>
         </header>
 

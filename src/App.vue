@@ -104,7 +104,7 @@
     </div>
   </nav>
 
-  <main class="container mx-auto max-w-[1100px] text-white mt-40">
+  <main class="container mx-auto max-w-[1100px] text-white">
     <RouterView v-slot="{ Component }">
       <transition name="fade">
         <Suspense>
@@ -116,10 +116,11 @@
 </template>
 
 <style scoped>
-  nav, .navblur {
+  nav,
+  .navblur {
     position: fixed;
     font-family: 'Poppins';
-    top:40px;
+    top: 20px;
     font-weight: 400;
     font-size: 17px;
     line-height: 100%;
@@ -134,6 +135,10 @@
 
   nav a {
     transition: all 0.2s ease-out;
+  }
+
+  main {
+    margin-top: 90px;
   }
 
   .active {
