@@ -66,7 +66,7 @@ const scroll_down_contact = () => {
 </script>
 
 <template>
-    <div class="flex flex-col gap-10 mt-10 mb-20">
+    <div class="flex flex-col gap-10 mt-40 mb-20">
         <header class="grid grid-cols-1 md:grid-cols-5 p-20 gap-5 m-5 md:m-0">
             <div class="w-full col-span-3 flex flex-col content-around justify-evenly items-start gap-5">
                 <h2 class=" test-[20px] md:text-[44px] font-semibold">Hey! Ik ben</h2>
