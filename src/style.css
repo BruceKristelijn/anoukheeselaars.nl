@@ -9,6 +9,7 @@
 html {
   transition: background 0.5s ease, background-color 0.5s ease;
   background: var(--body-bg);
+  color: #3B3B3B;
 }
 
 
