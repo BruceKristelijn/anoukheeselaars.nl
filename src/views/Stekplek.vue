@@ -1,7 +1,7 @@
 <script setup>
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
-    import headerimage from '../assets/nrv/nrv_header.png'
+    import headerimage from '../assets/mijn_werk_stekplek_image.png'
 
     import screens from '../assets/zab/zal_screens.png'
     import screen1 from '../assets/zab/zab_welcomescreen.png'
@@ -47,7 +47,7 @@
 
 
 <template>
-    <PageWrapper :image="headerimage" :logo="mijn_werk_stekplek_logo" organisation="NRV" work="Afstudeer opdracht"
+    <PageWrapper :image="headerimage" :logo="mijn_werk_stekplek_logo" organisation="Stekplek" work="Concept voorstel"
         side_description="StekPlek is een creatief media, communicatie & ontwerpbureau die eigen kennis en passie combineert, om ideeën te realiseren. Voor dit bedrijf hebben mijn team en ik door middel van onderzoek een prototype ontwikkeld."
         :description='description'>
 

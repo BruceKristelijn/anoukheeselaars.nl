@@ -13,7 +13,7 @@
     <RouterLink :to="route_link">
         <div class="p-5 bg-white rounded-lg flex flex-col justify-around gap-5 root h-[320px] w-[310px]">
             <img class="rounded-md" :src="image">
-            <img class="w-1/8" :src="logo">
+            <img class="h-[30px] w-auto object-contain mr-auto" :src="logo">
             <h4 class="text-black font-bold">{{ text }}</h4>
         </div>
     </RouterLink>
