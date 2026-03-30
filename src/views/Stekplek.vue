@@ -1,7 +1,7 @@
 <script setup>
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
-    import headerimage from '../assets/mijn_werk_stekplek_image.png'
+    import headerimage from '../assets/stekplek/stekplek_header.png'
 
     import screens from '../assets/zab/zal_screens.png'
     import screen1 from '../assets/zab/zab_welcomescreen.png'
