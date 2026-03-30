@@ -1,38 +1,51 @@
 <script setup>
-import PageWrapper from '../components/PageWrapper.vue'
-import SimpleCard from '../components/SimpleCard.vue'
-import headerimage from '../assets/maatwerkonline/maatwerkonline_headerimage.png'
+    import PageWrapper from '../components/PageWrapper.vue'
+    import SimpleCard from '../components/SimpleCard.vue'
+    import headerimage_sm from '../assets/maatwerkonline/maatwerkonline_headerimage.png?width=400&format=webp'
+    import headerimage_md from '../assets/maatwerkonline/maatwerkonline_headerimage.png?width=800&format=webp'
+    import headerimage_lg from '../assets/maatwerkonline/maatwerkonline_headerimage.png?width=1200&format=webp'
+    import headerimage_xl from '../assets/maatwerkonline/maatwerkonline_headerimage.png?width=1800&format=webp'
 
-// Abri's
-import abri1 from '../assets/maatwerkonline/abris/maatwerkonline_abri_1.png'
-import abri2 from '../assets/maatwerkonline/abris/maatwerkonline_abri_2.png'
-import abri3 from '../assets/maatwerkonline/abris/maatwerkonline_abri_3.png'
-import abri4 from '../assets/maatwerkonline/abris/maatwerkonline_abri_4.png'
-import abri5 from '../assets/maatwerkonline/abris/maatwerkonline_abri_5.png'
+    // Abri's
+    import abri1 from '../assets/maatwerkonline/abris/maatwerkonline_abri_1.png'
+    import abri2 from '../assets/maatwerkonline/abris/maatwerkonline_abri_2.png'
+    import abri3 from '../assets/maatwerkonline/abris/maatwerkonline_abri_3.png'
+    import abri4 from '../assets/maatwerkonline/abris/maatwerkonline_abri_4.png'
+    import abri5 from '../assets/maatwerkonline/abris/maatwerkonline_abri_5.png'
 
-// Slides
-import slide1 from '../assets/maatwerkonline/slides/maatwerkonline_slides_1.png'
-import slide2 from '../assets/maatwerkonline/slides/maatwerkonline_slides_2.png'
-import slide3 from '../assets/maatwerkonline/slides/maatwerkonline_slides_3.png'
-import slide4 from '../assets/maatwerkonline/slides/maatwerkonline_slides_4.png'
-import slide5 from '../assets/maatwerkonline/slides/maatwerkonline_slides_5.png'
-import slide6 from '../assets/maatwerkonline/slides/maatwerkonline_slides_6.png'
-import slide7 from '../assets/maatwerkonline/slides/maatwerkonline_slides_7.png'
-import slide8 from '../assets/maatwerkonline/slides/maatwerkonline_slides_8.png'
-import slide9 from '../assets/maatwerkonline/slides/maatwerkonline_slides_9.png'
+    // Slides
+    import slide1 from '../assets/maatwerkonline/slides/maatwerkonline_slides_1.png'
+    import slide2 from '../assets/maatwerkonline/slides/maatwerkonline_slides_2.png'
+    import slide3 from '../assets/maatwerkonline/slides/maatwerkonline_slides_3.png'
+    import slide4 from '../assets/maatwerkonline/slides/maatwerkonline_slides_4.png'
+    import slide5 from '../assets/maatwerkonline/slides/maatwerkonline_slides_5.png'
+    import slide6 from '../assets/maatwerkonline/slides/maatwerkonline_slides_6.png'
+    import slide7 from '../assets/maatwerkonline/slides/maatwerkonline_slides_7.png'
+    import slide8 from '../assets/maatwerkonline/slides/maatwerkonline_slides_8.png'
+    import slide9 from '../assets/maatwerkonline/slides/maatwerkonline_slides_9.png'
 
-import overview from '../assets/maatwerkonline/other_content.png'
+    import overview from '../assets/maatwerkonline/other_content.png'
 
-// Logo
-import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
+    // Logo
+    import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
 
-const abris = [abri1, abri2, abri3, abri4, abri5];
-const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9]
+    const abris = [abri1, abri2, abri3, abri4, abri5];
+    const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9]
+
+    const headerimages = {
+        sm: headerimage_sm,
+        md: headerimage_md,
+        lg: headerimage_lg,
+        xl: headerimage_xl,
+    }
 </script>
 
 
 <template>
-    <PageWrapper :image="headerimage" :logo="mijn_werk_maatwerkonline_logo" organisation="Maatwerk Online" work="Visual & UI/UX design" side_description="Maatwerk Online is gericht op alle aspecten van online marketing. Naast het ontwerpen van websites die perfect aansluiten bij de specifieke wensen van de klanten, zorgen ze voor een goede vindbaarheid van websites en optimaliseren ze voortdurend de conversieratio." description="Ook zijn ze betrokken bij het opzetten, beheren en optimaliseren van advertentiecampagnes, zoals Google AdWords en Facebook-campagnes. Daarnaast verlenen zij diensten met betrekking tot zoekmachine adverteren, zoekmachine optimalisatie, social media adverteren, conversieoptimalisatie, webdevelopment en Amazon marketing.">
+    <PageWrapper :images="headerimages" :logo="mijn_werk_maatwerkonline_logo" organisation="Maatwerk Online"
+        work="Visual & UI/UX design"
+        side_description="Maatwerk Online is gericht op alle aspecten van online marketing. Naast het ontwerpen van websites die perfect aansluiten bij de specifieke wensen van de klanten, zorgen ze voor een goede vindbaarheid van websites en optimaliseren ze voortdurend de conversieratio."
+        description="Ook zijn ze betrokken bij het opzetten, beheren en optimaliseren van advertentiecampagnes, zoals Google AdWords en Facebook-campagnes. Daarnaast verlenen zij diensten met betrekking tot zoekmachine adverteren, zoekmachine optimalisatie, social media adverteren, conversieoptimalisatie, webdevelopment en Amazon marketing.">
 
         <SimpleCard title="Abri's">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row  justify-between">
@@ -53,7 +66,7 @@ const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, 
 </template>
 
 <style scoped>
-.slide {
-    box-shadow: 0px 2.58px 11.2px 0px #0000001A;
-}
+    .slide {
+        box-shadow: 0px 2.58px 11.2px 0px #0000001A;
+    }
 </style>

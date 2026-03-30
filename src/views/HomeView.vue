@@ -5,7 +5,7 @@ import MyWorkCard from '../components/MyWorkCard.vue'
 import { useNavLoader } from '../composables/useNavLoader'
 
 // Header image
-import anouk_heeselaars_home_foto from '../assets/anouk_heeselaars_home_foto.png'
+import anouk_heeselaars_home_foto from '../assets/anouk_heeselaars_home_foto.png?w=400;800;1200&format=webp&as=srcset'
 
 // Work images
 import mijn_werk_stekplek_image from '../assets/mijn_werk_ui_ux_stepplek_image.png'
@@ -87,7 +87,8 @@ const scroll_down_contact = () => {
             <div class="w-full col-span-2">
                 <img
                     ref="heroImgRef"
-                    :src="anouk_heeselaars_home_foto"
+                    :srcset="anouk_heeselaars_home_foto"
+                    sizes="(max-width: 800px) 400px, (max-width: 1200px) 800px, 1200px"
                     class="float"
                     loading="eager"
                     @load="complete"

@@ -1,7 +1,10 @@
 <script setup>
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
-    import headerimage from '../assets/stekplek/stekplek_header.png'
+    import headerimage_sm from '../assets/stekplek/stekplek_header.png?width=400&format=webp'
+    import headerimage_md from '../assets/stekplek/stekplek_header.png?width=800&format=webp'
+    import headerimage_lg from '../assets/stekplek/stekplek_header.png?width=1200&format=webp'
+    import headerimage_xl from '../assets/stekplek/stekplek_header.png?width=1800&format=webp'
 
     // Logo
     import mijn_werk_stekplek_logo from '../assets/mijn_werk_ui_ux_stepplek_logo.png'
@@ -14,6 +17,13 @@
     import final1 from '../assets/stekplek/stekplek_finalprototype1.mp4'
     import final2 from '../assets/stekplek/stekplek_finalprototype2.mp4'
     import final3 from '../assets/stekplek/stekplek_finalprototype3.mp4'
+    
+    const headerimages = {
+        sm: headerimage_sm,
+        md: headerimage_md,
+        lg: headerimage_lg,
+        xl: headerimage_xl,
+    }
 
     const description = ["StekPlek wil freelancers graag een handje helpen want als freelancer kan het nogal moeilijk zijn om grote opdrachten aan te nemen. Niet iedereen heeft de kennis om het gehele spectrum van een opdracht uit te voeren. Stel de freelancer neemt de opdracht wel aan, dan moet een opdrachtgever zelf nog opzoek naar bijvoorbeeld een developer om het ontwerp van de freelancer te bouwen.", "Dit kan een hoop hoofdpijn en miscommunicatie veroorzaken voor zowel de freelancer als de opdrachtgever. StekPlek wil daarom graag een platform bouwen waar freelancers kunnen netwerken, hun opdrachten kunnen delen en de kennis kunnen overbrengen die anderen wellicht niet hebben. Op die manier kan je als freelancer goede kwaliteit leveren die je wilt leveren en andere freelancers leren kennen die jou ook kunnen helpen bij toekomstige opdrachten. De opdracht was om het eerste concept op te leveren van dit netwerkplatform waar freelancers samen kunnen werken, kunnen netwerken en hun kennis over te kunnen brengen."]
     const final_prototypes = [
@@ -44,7 +54,7 @@
 
 
 <template>
-    <PageWrapper :image="headerimage" :logo="mijn_werk_stekplek_logo" organisation="Stekplek" work="Concept voorstel"
+    <PageWrapper :images="headerimages" :logo="mijn_werk_stekplek_logo" organisation="Stekplek" work="Concept voorstel"
         side_description="StekPlek is een creatief media, communicatie & ontwerpbureau die eigen kennis en passie combineert, om ideeën te realiseren. Voor dit bedrijf hebben mijn team en ik door middel van onderzoek een prototype ontwikkeld."
         :description='description'>
 

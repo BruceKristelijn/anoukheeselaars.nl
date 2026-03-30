@@ -2,11 +2,23 @@
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
 
-    import headerimage from '../assets/isodeco/isodeco_header.png'
+    import headerimage_sm from '../assets/isodeco/isodeco_header.png?width=400&format=webp'
+    import headerimage_md from '../assets/isodeco/isodeco_header.png?width=800&format=webp'
+    import headerimage_lg from '../assets/isodeco/isodeco_header.png?width=1200&format=webp'
+    import headerimage_xl from '../assets/isodeco/isodeco_header.png?width=1800&format=webp'
+
+
     import isodeco_logo from '../assets/isodeco/isodeco_logo.png'
 
     import website_old from '../assets/isodeco/isodeco_website_old.png'
     import website_new from '../assets/isodeco/isodeco_website_new.png'
+
+    const headerimages = {
+        sm: headerimage_sm,
+        md: headerimage_md,
+        lg: headerimage_lg,
+        xl: headerimage_xl,
+    }
 
     const description = ["Mijn aanpak is gebaseerd op visuele ontwerp principes. Door deze principes strategisch toe te passen, heb ik een duidelijke structuur, consistente vormgeving en een optimale gebruikerservaring ontwikkeld. Het uiteindelijke concept is niet alleen visueel sterker, maar sluit ook beter aan op de behoeften van de gebruiker."];
 
@@ -63,7 +75,7 @@
 
 
 <template>
-    <PageWrapper :image="headerimage" :logo="isodeco_logo" organisation="IsoDeco" work="Website-ontwerp"
+    <PageWrapper :images="headerimages" :logo="isodeco_logo" organisation="IsoDeco" work="Website-ontwerp"
         side_description="IsoDeco vroeg om advies voor het optimaliseren van hun landingspagina. Tijdens mijn analyse heb ik gekeken naar de structuur, content-hiërarchie, visuele rust en conversie‑elementen. Op basis van deze bevindingen heb ik een nieuw ontwerp gemaakt dat de merkidentiteit versterkt en de gebruiker sneller naar de juiste actie leidt."
         :description="description">
 
@@ -86,7 +98,8 @@
                     <b>Aanbevelingen:</b>
                 </p>
                 <ul class="list-none pl-2 mt-0">
-                    <li v-for="suggestion in entry.suggestions" class="flex before:content-['·'] before:mr-2 before:shrink-0">
+                    <li v-for="suggestion in entry.suggestions"
+                        class="flex before:content-['·'] before:mr-2 before:shrink-0">
                         {{suggestion}}
                     </li>
                 </ul>

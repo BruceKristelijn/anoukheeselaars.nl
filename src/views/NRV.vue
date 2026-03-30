@@ -1,7 +1,11 @@
 <script setup>
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
-    import headerimage from '../assets/nrv/nrv_header.png'
+    import headerimage_sm from '../assets/nrv/nrv_header.png?width=400&format=webp'
+    import headerimage_md from '../assets/nrv/nrv_header.png?width=800&format=webp'
+    import headerimage_lg from '../assets/nrv/nrv_header.png?width=1200&format=webp'
+    import headerimage_xl from '../assets/nrv/nrv_header.png?width=1800&format=webp'
+
 
     // Logo
     import mijn_werk_nrv_logo from '../assets/mijn_werk_nrv_logo.png'
@@ -15,11 +19,17 @@
     import old1 from '../assets/nrv/nrv_old1.mp4'
     import old2 from '../assets/nrv/nrv_old2.png'
 
+    const headerimages = {
+        sm: headerimage_sm,
+        md: headerimage_md,
+        lg: headerimage_lg,
+        xl: headerimage_xl,
+    }
 </script>
 
 
 <template>
-    <PageWrapper :image="headerimage" :logo="mijn_werk_nrv_logo" organisation="NRV" work="Afstudeer opdracht"
+    <PageWrapper :images="headerimages" :logo="mijn_werk_nrv_logo" organisation="NRV" work="Afstudeer opdracht"
         side_description="Voor mijn afstudeerproject werkte ik aan de optimalisatie van het boekingsproces van de privéreizen-pagina’s. Dit is een proces dat wat meer aandacht vereist, omdat je als klant bij het boeken van een privéreis veel keuzes moet maken en voorkeuren kunt uitkiezen."
         description="Bij NRV begrijpen ze dat het soms lastig kan zijn om de juiste reis te vinden die aansluit bij de specifieke wensen van hun potentiële klanten. Met hun uitgebreide reisaanbod willen ze hun klanten helpen eenvoudig te oriënteren op hun ideale reiservaring. Daarom is een logische flow op de website en een duidelijk soepel boekingsproces absoluut essentieel voor het succes van NRV. Ze zijn hun site in fases aan het vernieuwen, zo hebben ze al een deel van de pagina’s van de groepsreizen omgebouwd naar een nieuw en mobile-friendly design.">
 
@@ -140,7 +150,8 @@
 </template>
 
 <style scoped>
-img, video {
-    box-shadow: 0px 3.45px 3.45px 0px #0000000D;
-}
+    img,
+    video {
+        box-shadow: 0px 3.45px 3.45px 0px #0000000D;
+    }
 </style>
