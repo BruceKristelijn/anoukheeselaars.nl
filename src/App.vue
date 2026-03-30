@@ -1,13 +1,25 @@
 <script setup>
   import { routes } from './routes.js'
-  import { useRoute } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
   import { watch, ref } from "vue";
+  import { useNavLoader } from './composables/useNavLoader'
 
   const route = useRoute();
+  const router = useRouter();
 
   const defaultBackgroundColor = "white";
   const backgroundColor = ref(defaultBackgroundColor)
   const isNavOpen = ref(false)
+
+  const { progress: navProgress, visible: navVisible, color: navBarColor, start: startNav, waitForContent } = useNavLoader()
+
+  router.beforeEach((to) => {
+    startNav(to.meta.backgroundColor || defaultBackgroundColor)
+  })
+
+  router.afterEach(() => {
+    waitForContent()
+  })
 
   watch(
     () => route.meta.backgroundColor,
@@ -58,6 +70,11 @@
   </div>
 
   <nav class="w-full p-5 bg-white fixed">
+    <div
+      class="nav-progress"
+      :style="{ width: navProgress + '%', opacity: navVisible ? 1 : 0, background: navBarColor }"
+    ></div>
+
     <!-- Mobile hamburger button -->
     <div class="md:hidden flex justify-between items-center">
       <div class="font-semibold">{{ route.name }}</div>
@@ -139,5 +156,16 @@
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
+  }
+
+  .nav-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    z-index: 1000;
+    transition: width 0.15s ease, opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 0 2px 2px 0;
   }
 </style>

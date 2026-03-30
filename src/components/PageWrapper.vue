@@ -1,19 +1,40 @@
 <script setup>
   // Page to wrap around the content of a page
 
-  import { ref, defineProps } from 'vue'
+  import { ref, watch, computed, onMounted, provide, defineProps } from 'vue'
   import SimpleCard from './SimpleCard.vue';
+  import { useNavLoader } from '../composables/useNavLoader'
 
   const { color, image, logo, organisation, work, side_description, description } = defineProps(['color', 'image', 'logo', 'organisation', 'work', 'side_description', 'description'])
+
+  const { complete } = useNavLoader()
+
+  const headerImgRef = ref(null)
+  const logoImgRef = ref(null)
+  const headerLoaded = ref(false)
+  const logoLoaded = ref(false)
+
+  const allLoaded = computed(() => headerLoaded.value && logoLoaded.value)
+
+  provide('pageReady', allLoaded)
+
+  watch(allLoaded, (loaded) => {
+    if (loaded) complete()
+  })
+
+  onMounted(() => {
+    if (headerImgRef.value?.complete) headerLoaded.value = true
+    if (logoImgRef.value?.complete) logoLoaded.value = true
+  })
 </script>
 
 <template>
   <div class="page-wrapper">
-    <img class="header_img w-[100vw] z-[0]" :src="image" loading="eager">
-    <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10]">
+    <img ref="headerImgRef" class="header_img w-[100vw] z-[0]" :src="image" loading="eager" @load="headerLoaded = true">
+    <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10] page-content" :class="{ loaded: allLoaded }">
       <SimpleCard title="" class="flex flex-col gap-0">
         <div class="flex flex-row h-[50px] mb-5">
-          <img class="mx-auto h-full" :src="logo" loading="lazy">
+          <img ref="logoImgRef" class="mx-auto h-full" :src="logo" loading="lazy" @load="logoLoaded = true">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 justify-between gap-5 mt-7">
           <div class="col-span-2 md:col-span-1 border-r-0 md:border-r-1 border-b-1 md:border-b-0 border-slate-500 pb-3 md:pb-0">
@@ -57,5 +78,14 @@
     width: auto;
     height: fit-content;
     max-height: 100%;
+  }
+
+  .page-content {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .page-content.loaded {
+    opacity: 1;
   }
 </style>

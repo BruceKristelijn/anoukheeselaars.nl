@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 import MyWorkCard from '../components/MyWorkCard.vue'
+import { useNavLoader } from '../composables/useNavLoader'
 
 // Header image
 import anouk_heeselaars_home_foto from '../assets/anouk_heeselaars_home_foto.png'
@@ -19,6 +20,13 @@ import mijn_werk_zab_image from '../assets/mijn_werk_zab_image.png'
 import mijn_werk_zab_logo from '../assets/mijn_werk_zab_logo.png'
 import mijn_werk_booksbyani_image from '../assets/mijn_werk_booksbyani_image.png'
 import mijn_werk_booksbyani_logo from '../assets/mijn_werk_booksbyani_logo.png'
+
+const { complete } = useNavLoader()
+const heroImgRef = ref(null)
+
+onMounted(() => {
+    if (heroImgRef.value?.complete) complete()
+})
 
 const contactRef = ref(null)
 
@@ -77,7 +85,7 @@ const scroll_down_contact = () => {
                 <button class="text-[16px] btn cursor-pointer" @click="scroll_down_contact">Contact</button>
             </div>
             <div class="w-full col-span-2">
-                <img :src="anouk_heeselaars_home_foto" class="" loading="eager">
+                <img ref="heroImgRef" :src="anouk_heeselaars_home_foto" class="" loading="eager" @load="complete">
             </div>
         </header>
 
