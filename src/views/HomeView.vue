@@ -14,8 +14,8 @@ import mijn_werk_maatwerkonline_image from '../assets/mijn_werk_maatwerkonline_i
 import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
 import mijn_werk_nrv_image from '../assets/mijn_werk_nrv_image.png'
 import mijn_werk_nrv_logo from '../assets/mijn_werk_nrv_logo.png'
-import mijn_werk_savannadevelopments_image from '../assets/mijn_werk_savannadevelopments_image.png'
-import mijn_werk_savannadevelopments_logo from '../assets/mijn_werk_savannadevelopments_logo.png'
+import mijn_werk_irislearningsolutions_image from '../assets/mijn_werk_irislearningsolutions_image.png'
+import mijn_werk_irislearningsolutions_logo from '../assets/mijn_werk_irislearningsolutions_logo.png'
 import mijn_werk_isodeco_image from '../assets/mijn_werk_isodeco_image.png'
 import mijn_werk_isodeco_logo from '../assets/mijn_werk_isodeco_logo.png'
 import mijn_werk_voorlopig_image from '../assets/mijn_werk_voorlopig_image.png'
@@ -46,8 +46,8 @@ const work = [{
     text: "UI/UX Design",
     route_link: "nrv"
 },{
-    image: mijn_werk_savannadevelopments_image,
-    logo: mijn_werk_savannadevelopments_logo,
+    image: mijn_werk_irislearningsolutions_image,
+    logo: mijn_werk_irislearningsolutions_logo,
     text: "Merkidentiteit",
     route_link: "savannadevelopments"
 },{

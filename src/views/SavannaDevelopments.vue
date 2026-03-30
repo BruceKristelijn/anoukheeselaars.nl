@@ -2,7 +2,7 @@
     import PageWrapper from '../components/PageWrapper.vue'
     import SimpleCard from '../components/SimpleCard.vue'
 
-    import mijn_werk_savannadevelopments_logo from '../assets/mijn_werk_savannadevelopments_logo.png'
+    import mijn_werk_savannadevelopments_logo from '../assets/savannadevelopments/savannadevelopments_logo.png'
     import headerimage_sm from '../assets/savannadevelopments/savannadevelopments_header.png?width=400&format=webp'
     import headerimage_md from '../assets/savannadevelopments/savannadevelopments_header.png?width=800&format=webp'
     import headerimage_lg from '../assets/savannadevelopments/savannadevelopments_header.png?width=1200&format=webp'
