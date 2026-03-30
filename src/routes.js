@@ -5,7 +5,7 @@ import Stekplek from './views/Stekplek.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
 import NRV from './views/NRV.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
-import Isodeco from './views/isodeco.vue'
+import Isodeco from './views/Isodeco.vue'
 import Voorlopig from './views/Voorlopig.vue'
 import IrisLearningSolutions from './views/IrisLearningSolutions.vue'
 
