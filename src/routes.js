@@ -5,7 +5,7 @@ import Stekplek from './views/Stekplek.vue'
 import MaatwerkOnline from './views/MaatwerkOnline.vue'
 import NRV from './views/NRV.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
-import ZAB from './views/ZAB.vue'
+import Isodeco from './views/isodeco.vue'
 import BooksByAni from './views/BooksByAni.vue'
 
 export const routes = [
@@ -50,12 +50,12 @@ export const routes = [
       activeColor: "#B93056"
     }
   },
-  { path: '/zab', 
-    component: ZAB, 
-    name: "ZAB.",
+  { path: '/isodeco', 
+    component: Isodeco, 
+    name: "IsoDeco",
     meta: {
-      backgroundColor: "#872B8E",
-      activeColor: "#882C8F"
+      backgroundColor: "#F1E7DE",
+      activeColor: "#CCB29A"
     }
   },
   { path: '/booksbyani', 
