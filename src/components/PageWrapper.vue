@@ -9,11 +9,11 @@
 
 <template>
   <div class="page-wrapper">
-    <img class="header_img w-[100vw] z-[0]" :src="image">
+    <img class="header_img w-[100vw] z-[0]" :src="image" loading="eager">
     <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10]">
       <SimpleCard title="" class="flex flex-col gap-0">
         <div class="flex flex-row h-[50px] mb-5">
-          <img class="mx-auto h-full" :src="logo">
+          <img class="mx-auto h-full" :src="logo" loading="lazy">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 justify-between gap-5 mt-7">
           <div class="col-span-2 md:col-span-1 border-r-0 md:border-r-1 border-b-1 md:border-b-0 border-slate-500 pb-3 md:pb-0">

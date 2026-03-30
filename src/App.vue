@@ -1,7 +1,7 @@
 <script setup>
   import { routes } from './routes.js'
   import { useRoute } from 'vue-router'
-  import { watch, ref, onMounted } from "vue";
+  import { watch, ref } from "vue";
 
   const route = useRoute();
 
@@ -49,21 +49,6 @@
     }
   );
 
-  const images = ref({})
-  const isLoaded = ref(false)
-
-  onMounted(async () => {
-    // Preload all images
-    const imageModules = import.meta.glob('../assets/**/*.png', { eager: true })
-
-    for (const path in imageModules) {
-      const mod = imageModules[path]
-      const imageName = path.split('/').pop().replace('.png', '')
-      images.value[imageName] = mod.default
-    }
-
-    isLoaded.value = true
-  })
 
 </script>
 

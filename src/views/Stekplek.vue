@@ -64,8 +64,8 @@
                     uitwerken.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-20 p-4">
-                    <img :src="prototype1" class="shadow">
-                    <img :src="prototype2" class="shadow">
+                    <img :src="prototype1" class="shadow" loading="lazy">
+                    <img :src="prototype2" class="shadow" loading="lazy">
                 </div>
             </div>
         </SimpleCard>
