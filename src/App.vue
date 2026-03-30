@@ -3,6 +3,7 @@
   import { useRoute, useRouter } from 'vue-router'
   import { watch, ref } from "vue";
   import { useNavLoader } from './composables/useNavLoader'
+  import { Analytics } from "@vercel/analytics/vue"
 
   const route = useRoute();
   const router = useRouter();
@@ -64,7 +65,8 @@
 </script>
 
 <template>
-
+  <Analytics />
+  
   <div class="navblur w-full fixed">
   </div>
 
