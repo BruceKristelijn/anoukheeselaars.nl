@@ -43,14 +43,6 @@ export const routes = [
       activeColor: "#E34800"
     }
   },
-  { path: '/savannadevelopments', 
-    component: SavannaDevelopments, 
-    name: "Savanna Developments",
-    meta: {
-      backgroundColor: "#B93056",
-      activeColor: "#B93056"
-    }
-  },
   { path: '/isodeco', 
     component: Isodeco, 
     name: "IsoDeco",
@@ -73,6 +65,14 @@ export const routes = [
     meta: {
       backgroundColor: "linear-gradient(180deg, #AC8973 0%, #BE9C86 100%)",
       activeColor: "#AC8973"
+    }
+  },
+  { path: '/savannadevelopments', 
+    component: SavannaDevelopments, 
+    name: "Savanna Developments",
+    meta: {
+      backgroundColor: "#B93056",
+      activeColor: "#B93056"
     }
   }
 ]
