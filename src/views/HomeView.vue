@@ -8,18 +8,18 @@ import { useNavLoader } from '../composables/useNavLoader'
 import anouk_heeselaars_home_foto from '../assets/anouk_heeselaars_home_foto.png'
 
 // Work images
-import mijn_werk_stepplek_image from '../assets/mijn_werk_ui_ux_stepplek_image.png'
-import mijn_werk_stepplek_logo from '../assets/mijn_werk_ui_ux_stepplek_logo.png'
+import mijn_werk_stekplek_image from '../assets/mijn_werk_ui_ux_stepplek_image.png'
+import mijn_werk_stekplek_logo from '../assets/mijn_werk_ui_ux_stepplek_logo.png'
 import mijn_werk_maatwerkonline_image from '../assets/mijn_werk_maatwerkonline_image.png'
 import mijn_werk_maatwerkonline_logo from '../assets/mijn_werk_maatwerkonline_logo.png'
 import mijn_werk_nrv_image from '../assets/mijn_werk_nrv_image.png'
 import mijn_werk_nrv_logo from '../assets/mijn_werk_nrv_logo.png'
 import mijn_werk_savannadevelopments_image from '../assets/mijn_werk_savannadevelopments_image.png'
 import mijn_werk_savannadevelopments_logo from '../assets/mijn_werk_savannadevelopments_logo.png'
-import mijn_werk_zab_image from '../assets/mijn_werk_zab_image.png'
-import mijn_werk_zab_logo from '../assets/mijn_werk_zab_logo.png'
-import mijn_werk_booksbyani_image from '../assets/mijn_werk_booksbyani_image.png'
-import mijn_werk_booksbyani_logo from '../assets/mijn_werk_booksbyani_logo.png'
+import mijn_werk_isodeco_image from '../assets/mijn_werk_isodeco_image.png'
+import mijn_werk_isodeco_logo from '../assets/mijn_werk_isodeco_logo.png'
+import mijn_werk_voorlopig_image from '../assets/mijn_werk_voorlopig_image.png'
+import mijn_werk_voorlopig_logo from '../assets/mijn_werk_voorlopig_logo.png'
 
 const { complete } = useNavLoader()
 const heroImgRef = ref(null)
@@ -31,8 +31,8 @@ onMounted(() => {
 const contactRef = ref(null)
 
 const work = [{
-    image: mijn_werk_stepplek_image,
-    logo: mijn_werk_stepplek_logo,
+    image: mijn_werk_stekplek_image,
+    logo: mijn_werk_stekplek_logo,
     text: "UI/UX Design",
     route_link: "stekplek"
 },{
@@ -51,15 +51,15 @@ const work = [{
     text: "Merkidentiteit",
     route_link: "savannadevelopments"
 },{
-    image: mijn_werk_zab_image,
-    logo: mijn_werk_zab_logo,
-    text: "APP-ontwerp",
-    route_link: "zab"
+    image: mijn_werk_isodeco_image,
+    logo: mijn_werk_isodeco_logo,
+    text: "Website-ontwerp",
+    route_link: "isodeco"
 },{
-    image: mijn_werk_booksbyani_image,
-    logo: mijn_werk_booksbyani_logo,
-    text: "Concept Voorstel",
-    route_link: "booksbyani"
+    image: mijn_werk_voorlopig_image,
+    logo: mijn_werk_voorlopig_logo,
+    text: "Website-ontwerp",
+    route_link: "voorlopig"
 }]
 
 const scroll_down_contact = () => {
@@ -77,7 +77,7 @@ const scroll_down_contact = () => {
     <div class="flex flex-col gap-10 mt-40 mb-20">
         <header class="grid grid-cols-1 md:grid-cols-5 p-20 gap-5 m-5 md:m-0">
             <div class="w-full col-span-3 flex flex-col content-around justify-evenly items-start gap-5">
-                <h2 class=" test-[20px] md:text-[44px] font-semibold">Hey! Ik ben</h2>
+                <h2 class="text-[20px] md:text-[44px] font-semibold">Hey! Ik ben</h2>
                 <h1 class="text-[51px] font-bold">Anouk</h1>
                 <p>Door mijn specialisatie Human-Centered Design ben ik gedoken in de wereld van Visual Design. Ik vind
                     het heel interessant om bezig te zijn met het User interface design van zowel online platformen als
@@ -85,7 +85,13 @@ const scroll_down_contact = () => {
                 <button class="text-[16px] btn cursor-pointer" @click="scroll_down_contact">Contact</button>
             </div>
             <div class="w-full col-span-2">
-                <img ref="heroImgRef" :src="anouk_heeselaars_home_foto" class="" loading="eager" @load="complete">
+                <img
+                    ref="heroImgRef"
+                    :src="anouk_heeselaars_home_foto"
+                    class="float"
+                    loading="eager"
+                    @load="complete"
+                    >
             </div>
         </header>
 
@@ -148,29 +154,41 @@ button {
 
 .transparent_button {
     backdrop-filter: blur(15.407272338867188px);
-    background: #FFFFFF1F;  
+    background: #FFFFFF1F;
     box-shadow: 0px 0px 18.65px 4.05px #0000000F;
 }
 
+.float {
+    animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
 .bounce-enter-active {
-  animation: bounce-in 0.5s;
+    animation: bounce-in 0.5s;
 }
 
 .bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
+    animation: bounce-in 0.5s reverse;
 }
 
 @keyframes bounce-in {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 </style>

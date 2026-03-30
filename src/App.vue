@@ -43,7 +43,6 @@
     (newColor) => {
       if (newColor) {
         document.documentElement.style.setProperty('--active-url', newColor);
-      } else {
       }
     },
     {

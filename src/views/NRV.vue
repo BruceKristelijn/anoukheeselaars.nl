@@ -3,9 +3,6 @@
     import SimpleCard from '../components/SimpleCard.vue'
     import headerimage from '../assets/nrv/nrv_header.png'
 
-    import screens from '../assets/zab/zal_screens.png'
-    import screen1 from '../assets/zab/zab_welcomescreen.png'
-
     // Logo
     import mijn_werk_nrv_logo from '../assets/mijn_werk_nrv_logo.png'
 

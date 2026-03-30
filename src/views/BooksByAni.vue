@@ -3,9 +3,6 @@
     import SimpleCard from '../components/SimpleCard.vue'
     import headerimage from '../assets/booksbyani/booksbyani_header.png'
 
-    import screens from '../assets/zab/zal_screens.png'
-    import screen1 from '../assets/zab/zab_welcomescreen.png'
-
     // Logo
     import mijn_werk_booksbyani_logo from '../assets/mijn_werk_booksbyani_logo.png'
 

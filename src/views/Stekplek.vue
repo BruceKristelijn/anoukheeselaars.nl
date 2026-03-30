@@ -3,9 +3,6 @@
     import SimpleCard from '../components/SimpleCard.vue'
     import headerimage from '../assets/stekplek/stekplek_header.png'
 
-    import screens from '../assets/zab/zal_screens.png'
-    import screen1 from '../assets/zab/zab_welcomescreen.png'
-
     // Logo
     import mijn_werk_stekplek_logo from '../assets/mijn_werk_ui_ux_stepplek_logo.png'
 

@@ -69,7 +69,7 @@ export const routes = [
   },
   { path: '/irislearningsolutions', 
     component: IrisLearningSolutions, 
-    name: "IrisLearningSolutions",
+    name: "Iris Learning Solutions",
     meta: {
       backgroundColor: "linear-gradient(180deg, #AC8973 0%, #BE9C86 100%)",
       activeColor: "#AC8973"
