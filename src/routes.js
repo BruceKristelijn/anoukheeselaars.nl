@@ -6,7 +6,8 @@ import MaatwerkOnline from './views/MaatwerkOnline.vue'
 import NRV from './views/NRV.vue'
 import SavannaDevelopments from './views/SavannaDevelopments.vue'
 import Isodeco from './views/isodeco.vue'
-import BooksByAni from './views/BooksByAni.vue'
+import Voorlopig from './views/Voorlopig.vue'
+import IrisLearningSolutions from './views/IrisLearningSolutions.vue'
 
 export const routes = [
   { 
@@ -58,12 +59,20 @@ export const routes = [
       activeColor: "#CCB29A"
     }
   },
-  { path: '/booksbyani', 
-    component: BooksByAni, 
-    name: "Books by Ani",
+  { path: '/voorlopig', 
+    component: Voorlopig, 
+    name: "Voorlopig",
     meta: {
-      backgroundColor: "linear-gradient(103.01deg, #8EC9C8 9.39%, #8FCDCC 92.19%)",
-      activeColor: "#8ECAC9"
+      backgroundColor: "#87A0F2",
+      activeColor: "#87A0F2"
+    }
+  },
+  { path: '/irislearningsolutions', 
+    component: IrisLearningSolutions, 
+    name: "IrisLearningSolutions",
+    meta: {
+      backgroundColor: "linear-gradient(180deg, #AC8973 0%, #BE9C86 100%)",
+      activeColor: "#AC8973"
     }
   }
 ]
