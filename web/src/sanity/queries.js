@@ -6,8 +6,9 @@ const BG_COLOR_PROJECTION = `"bgColor": select(
   bgColorSolid.hex
 )`
 
-// Lightweight — used for nav links and route colour lookup
-const NAV_QUERY = `*[_type == "project"] | order(orderRank asc) {
+// Lightweight — used for nav links and route colour lookup.
+// Only includes projects with showInNav == true, ordered by drag-and-drop rank.
+const NAV_QUERY = `*[_type == "project" && showInNav == true] | order(orderRank asc) {
   "slug": slug.current,
   organisation,
   ${BG_COLOR_PROJECTION},
