@@ -25,6 +25,13 @@
     if (loaded) complete()
   })
 
+  const descriptionLines = computed(() => {
+    const raw = Array.isArray(description) ? description : [description]
+    return raw
+      .flatMap((t) => String(t ?? '').split(/\r?\n/))
+      .map((l) => l.trim())
+      .filter(Boolean)
+  })
 
   onMounted(() => {
     if (headerImgRef.value?.complete) headerLoaded.value = true
@@ -54,11 +61,8 @@
             </p>
           </div>
         </div>
-        <p class="mt-10" v-if="Array.isArray(description)" v-for="text in description">
+        <p class="mt-10" v-for="(text, i) in descriptionLines" :key="i">
           {{ text }}
-        </p>
-        <p class="mt-10" v-else>
-          {{ description }}
         </p>
       </SimpleCard>
 
