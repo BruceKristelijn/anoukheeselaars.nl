@@ -55,5 +55,26 @@ const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0] {
   }
 }`
 
+// Home page singleton — hero, featured projects, contact info
+const HOME_QUERY = `*[_type == "homePage"][0] {
+  heroGreeting,
+  heroName,
+  heroImage,
+  introParagraph,
+  workSectionHeading,
+  "featuredProjects": featuredProjects[] -> {
+    "slug": slug.current,
+    workType,
+    "cardImageUrl": cardImage.asset->url,
+    "logoUrl": logo.asset->url
+  },
+  contactSectionHeading,
+  displayPhoneNumber,
+  contactPhone,
+  displayEmail,
+  contactEmail
+}`
+
 export const fetchNavItems = () => client.fetch(NAV_QUERY)
 export const fetchProject = (slug) => client.fetch(PROJECT_QUERY, { slug })
+export const fetchHome = () => client.fetch(HOME_QUERY)

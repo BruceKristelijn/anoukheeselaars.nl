@@ -69,14 +69,30 @@ export const homePage = defineType({
       initialValue: 'Contact.',
     }),
     defineField({
+      name: 'displayPhoneNumber',
+      title: 'Display Phone Number',
+      type: 'boolean',
+      initialValue: true,
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'contactPhone',
       title: 'Phone number',
       type: 'string',
+      hidden: ({ document }) => document?.displayPhoneNumber !== true,
+    }),
+    defineField({
+      name: 'displayEmail',
+      title: 'Display Email',
+      type: 'boolean',
+      initialValue: true,
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'contactEmail',
       title: 'Email address',
       type: 'string',
+      hidden: ({ document }) => document?.displayEmail !== true,
     }),
   ],
 
