@@ -7,7 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies (all packages)
 node_modules
+
+# Build outputs (app-specific ignores are in web/.gitignore and studio/.gitignore)
 dist
 dist-ssr
 *.local
