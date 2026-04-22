@@ -1,4 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity'
+import { orderRankField } from '@sanity/orderable-document-list'
 
 export const project = defineType({
   name: 'project',
@@ -40,27 +41,51 @@ export const project = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+    orderRankField({ type: 'project' }),
     defineField({
-      name: 'orderRank',
-      title: 'Order',
-      type: 'number',
-      description: 'Controls display order on the home page',
+      name: 'showInNav',
+      title: 'Show in navigation',
+      type: 'boolean',
+      description: 'When off the page still exists but won\'t appear in the nav bar',
+      initialValue: true,
     }),
 
     // ─── Route theming ────────────────────────────────────────────────────────
     defineField({
-      name: 'bgColor',
-      title: 'Background color',
+      name: 'bgType',
+      title: 'Background type',
       type: 'string',
-      description:
-        'CSS value applied to --body-bg, e.g. "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"',
+      options: {
+        list: [
+          { title: 'Solid color', value: 'solid' },
+          { title: 'Gradient (CSS)', value: 'gradient' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      initialValue: 'solid',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'bgColorSolid',
+      title: 'Background color',
+      type: 'color',
+      options: { disableAlpha: true },
+      hidden: ({ document }) => document?.bgType !== 'solid',
+    }),
+    defineField({
+      name: 'bgColorGradient',
+      title: 'Background gradient',
+      type: 'string',
+      description: 'Any valid CSS value, e.g. "linear-gradient(180deg, #5E46CA 0%, #7D60FF 100%)"',
+      hidden: ({ document }) => document?.bgType !== 'gradient',
     }),
     defineField({
       name: 'activeLinkColor',
       title: 'Active link color',
-      type: 'string',
-      description: 'CSS value applied to --active-url, e.g. "#ffffff"',
+      type: 'color',
+      description: 'Colour applied to the active nav link',
+      options: { disableAlpha: true },
       validation: (Rule) => Rule.required(),
     }),
 
@@ -102,9 +127,9 @@ export const project = defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'array',
-      description: 'Main body — each item becomes a separate paragraph',
-      of: [defineArrayMember({ type: 'block' })],
+      type: 'text',
+      description: 'Main body text shown below the intro grid',
+      rows: 6,
       validation: (Rule) => Rule.required(),
     }),
 

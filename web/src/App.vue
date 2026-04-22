@@ -1,9 +1,9 @@
 <script setup>
-  import { routes } from './routes.js'
   import { useRoute, useRouter } from 'vue-router'
-  import { watch, ref } from "vue";
+  import { watch, ref, computed } from "vue";
   import { useNavLoader } from './composables/useNavLoader'
   import { Analytics } from "@vercel/analytics/vue"
+  import { navItems } from './stores/navItems.js'
 
   const route = useRoute();
   const router = useRouter();
@@ -11,6 +11,20 @@
   const defaultBackgroundColor = "white";
   const backgroundColor = ref(defaultBackgroundColor)
   const isNavOpen = ref(false)
+
+  // Nav entries: Home first, then projects from Sanity
+  const navLinks = computed(() => [
+    { path: '/', label: 'Home' },
+    ...navItems.value.map(p => ({ path: `/${p.slug}`, label: p.organisation }))
+  ])
+
+  // Current page label for the mobile header
+  const currentLabel = computed(() => {
+    if (route.params.slug) {
+      return navItems.value.find(p => p.slug === route.params.slug)?.organisation ?? ''
+    }
+    return 'Home'
+  })
 
   const { progress: navProgress, visible: navVisible, color: navBarColor, start: startNav, waitForContent } = useNavLoader()
 
@@ -40,7 +54,7 @@
   );
 
   watch(
-    () => route.meta.activeColor,
+    () => route.meta.activeLinkColor,
     (newColor) => {
       if (newColor) {
         document.documentElement.style.setProperty('--active-url', newColor);
@@ -52,9 +66,9 @@
   );
 
   watch(
-    () => route.name,
-    (newName) => {
-      document.title = "Anouk Heeselaars | " + newName;
+    currentLabel,
+    (label) => {
+      document.title = "Anouk Heeselaars | " + label;
     },
     {
       immediate: true
@@ -78,7 +92,7 @@
 
     <!-- Mobile hamburger button -->
     <div class="md:hidden flex justify-between items-center">
-      <div class="font-semibold">{{ route.name }}</div>
+      <div class="font-semibold">{{ currentLabel }}</div>
       <button @click="isNavOpen = !isNavOpen" class="p-2 rounded-md hover:bg-gray-100 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path :class="{ 'hidden': isNavOpen, 'inline-flex': !isNavOpen }" stroke-linecap="round"
@@ -91,18 +105,18 @@
 
     <!-- Desktop menu -->
     <div class="hidden md:flex items-center justify-around">
-      <RouterLink v-for="route in routes" :key="route.path" :to="route.path"
+      <RouterLink v-for="link in navLinks" :key="link.path" :to="link.path"
         class="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">
-        {{ route.name }}
+        {{ link.label }}
       </RouterLink>
     </div>
 
     <!-- Mobile menu -->
     <div :class="{ 'block': isNavOpen, 'hidden': !isNavOpen }"
       class="md:hidden mt-4 space-y-2 bg-white w-full absolute left-0 right-0 mt-[-1px] pt-2">
-      <RouterLink v-for="route in routes" :key="route.path" :to="route.path" @click="isNavOpen = false"
+      <RouterLink v-for="link in navLinks" :key="link.path" :to="link.path" @click="isNavOpen = false"
         class="block px-4 py-3 rounded-md hover:bg-gray-100 transition-colors">
-        {{ route.name }}
+        {{ link.label }}
       </RouterLink>
     </div>
   </nav>
