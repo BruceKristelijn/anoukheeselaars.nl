@@ -1,22 +1,27 @@
 <script setup>
-import SimpleCard from '../SimpleCard.vue'
-defineProps(['section'])
+  import SimpleCard from '../SimpleCard.vue'
+  defineProps(['section'])
 </script>
 
 <template>
-  <SimpleCard :title="section.title">
-    <div class="flex flex-col gap-6">
-      <div
-        v-for="card in section.cards"
-        :key="card.sectionName"
-        class="border-l-2 border-slate-300 pl-4"
-      >
+  <div class="grid grid-cols-2 gap-10">
+    <SimpleCard v-for="card in section.cards" :key="card.sectionName" :title="section.title">
+      <div class="border-slate-300 pl-4">
         <h3 class="font-semibold text-sm">{{ card.sectionName }}</h3>
-        <p v-if="card.observation" class="text-sm mt-1 opacity-80">{{ card.observation }}</p>
-        <ul v-if="card.recommendations?.length" class="list-disc list-inside mt-2 text-sm opacity-70 space-y-1">
-          <li v-for="rec in card.recommendations" :key="rec">{{ rec }}</li>
+        <p v-if="card.observation" class="text-sm mt-1 opacity-80">
+          {{ card.observation }}
+        </p>
+
+        <p class="mt-4">
+          <b>Aanbevelingen:</b>
+        </p>
+
+        <ul class="list-none pl-2 mt-0">
+          <li v-for="rec in card.recommendations" class="flex before:content-['·'] before:mr-2 before:shrink-0">
+            {{ rec }}
+          </li>
         </ul>
       </div>
-    </div>
-  </SimpleCard>
+    </SimpleCard>
+  </div>
 </template>

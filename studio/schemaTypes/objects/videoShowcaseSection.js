@@ -46,7 +46,6 @@ export const videoShowcaseSection = defineType({
               title: 'Video file',
               type: 'file',
               options: { accept: 'video/mp4,video/*' },
-              validation: (Rule) => Rule.required(),
             }),
             defineField({
               name: 'poster',

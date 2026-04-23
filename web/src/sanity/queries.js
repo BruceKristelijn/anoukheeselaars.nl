@@ -19,7 +19,7 @@ const NAV_QUERY = `*[_type == "project" && showInNav == true] | order(orderRank 
 const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0] {
   organisation,
   "slug": slug.current,
-  workType,
+  "workType": workType->name,
   ${BG_COLOR_PROJECTION},
   "activeLinkColor": activeLinkColor.hex,
   "logo": logo.asset->url,

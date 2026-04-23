@@ -40,10 +40,10 @@
 </script>
 
 <template>
-  <div class="page-wrapper overflow-x-hidden">
+  <div class="page-wrapper">
     <img ref="headerImgRef" class="header_img w-[100vw] z-[0]" :srcset="srcset" loading="eager"
       @load="headerLoaded = true"
-      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1800px">
+      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 2400px">
     <div class="relative flex flex-col gap-10 pt-[30vw] pb-20 z-[10] page-content" :class="{ loaded: allLoaded }">
       <SimpleCard title="" class="flex flex-col gap-0">
         <div class="flex flex-row h-[50px] mb-5">
