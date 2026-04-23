@@ -1,15 +1,16 @@
 <script setup>
 import SimpleCard from '../SimpleCard.vue'
+import { sectionImgAttrs } from '../../sanity/imageUrl.js'
 defineProps(['section'])
 </script>
 
 <template>
   <SimpleCard :title="section.title">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div v-for="card in section.cards" :key="card.title ?? card.imageUrl" class="flex flex-col gap-2">
+      <div v-for="card in section.cards" :key="card.title ?? card._ref" class="flex flex-col gap-2">
         <img
-          v-if="card.imageUrl"
-          :src="card.imageUrl + '?auto=format&w=600'"
+          v-if="card._ref"
+          v-bind="sectionImgAttrs({ _ref: card._ref, hotspot: card.imageHotspot, crop: card.imageCrop }, [400, 800])"
           :alt="card.title ?? ''"
           class="w-full rounded-md"
           loading="lazy"

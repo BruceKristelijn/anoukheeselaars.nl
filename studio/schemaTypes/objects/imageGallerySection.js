@@ -38,6 +38,13 @@ export const imageGallerySection = defineType({
       initialValue: 'auto',
     }),
     defineField({
+      name: 'rounded',
+      title: 'Rounded images',
+      type: 'boolean',
+      description: 'Choose if you want the image to be displayed with rounded corners or not.',
+      initialValue: true,
+    }),
+    defineField({
       name: 'images',
       title: 'Images',
       type: 'array',

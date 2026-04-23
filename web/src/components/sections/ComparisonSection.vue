@@ -1,5 +1,6 @@
 <script setup>
 import SimpleCard from '../SimpleCard.vue'
+import { sectionImgAttrs } from '../../sanity/imageUrl.js'
 defineProps(['section'])
 </script>
 
@@ -11,8 +12,8 @@ defineProps(['section'])
         <div class="flex flex-col gap-3">
           <img
             v-for="img in section.beforeImages"
-            :key="img.url"
-            :src="img.url + '?auto=format&w=800'"
+            :key="img._ref"
+            v-bind="sectionImgAttrs(img)"
             class="w-full rounded-md"
             loading="lazy"
           />
@@ -23,8 +24,8 @@ defineProps(['section'])
         <div class="flex flex-col gap-3">
           <img
             v-for="img in section.afterImages"
-            :key="img.url"
-            :src="img.url + '?auto=format&w=800'"
+            :key="img._ref"
+            v-bind="sectionImgAttrs(img)"
             class="w-full rounded-md"
             loading="lazy"
           />

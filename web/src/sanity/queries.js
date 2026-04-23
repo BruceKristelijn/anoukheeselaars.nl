@@ -31,7 +31,8 @@ const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0] {
     title,
     body,
     layout,
-    "images": images[] { "url": asset->url, caption },
+    rounded,
+    "images": images[] { "_ref": asset._ref, hotspot, crop, caption },
     videos[] {
       title,
       description,
@@ -39,13 +40,15 @@ const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0] {
       "posterUrl": poster.asset->url
     },
     beforeLabel,
-    "beforeImages": beforeImages[] { "url": asset->url },
+    "beforeImages": beforeImages[] { "_ref": asset._ref, hotspot, crop },
     afterLabel,
-    "afterImages": afterImages[] { "url": asset->url },
+    "afterImages": afterImages[] { "_ref": asset._ref, hotspot, crop },
     cards[] {
       title,
       body,
-      "imageUrl": image.asset->url,
+      "_ref": image.asset._ref,
+      "imageHotspot": image.hotspot,
+      "imageCrop": image.crop,
       sectionName,
       observation,
       recommendations

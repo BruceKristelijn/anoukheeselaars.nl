@@ -17,7 +17,7 @@
       }
     ]">
       <figure v-for="img in section.images" :key="img._ref" class="m-0">
-        <img v-bind="sectionImgAttrs(img, [600, 1000, 1600])" :alt="img.caption ?? ''" class="w-full block"
+        <img v-bind="sectionImgAttrs(img, [600, 1000, 1600, 2400])" :alt="img.caption ?? ''" class="w-full block"
           :class="{ 'rounded-md': section.rounded === true }" loading="lazy" />
         <figcaption v-if="img.caption" class="text-xs mt-1 opacity-60 text-center">
           {{ img.caption }}
