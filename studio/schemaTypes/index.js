@@ -1,6 +1,7 @@
 // Documents
 import { project } from './documents/project.js'
 import { homePage } from './documents/homePage.js'
+import { workType } from './documents/workType.js'
 
 // Section object types
 import { imageGallerySection } from './objects/imageGallerySection.js'
@@ -15,6 +16,7 @@ export const schemaTypes = [
   // Documents
   project,
   homePage,
+  workType,
 
   // Objects (section types used inside project.sections)
   imageGallerySection,

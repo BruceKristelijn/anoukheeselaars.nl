@@ -27,6 +27,12 @@ export default defineConfig({
                   .documentId('homePage'),
               ),
             orderableDocumentListDeskItem({ title: 'Projects', type: 'project', S, context}),
+            S.listItem()
+              .title('Work types')
+              .id('workType')
+              .child(
+                S.documentTypeList('workType').title('Work types'),
+              ),
       ]),
     }),
     visionTool(),

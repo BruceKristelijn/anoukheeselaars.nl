@@ -25,20 +25,9 @@ export const project = defineType({
     defineField({
       name: 'workType',
       title: 'Work type',
-      type: 'string',
+      type: 'reference',
       description: 'Shown on the card and page header',
-      options: {
-        list: [
-          { title: 'UI/UX Design', value: 'UI/UX Design' },
-          { title: 'Visual Design', value: 'Visual Design' },
-          { title: 'Merkidentiteit', value: 'Merkidentiteit' },
-          { title: 'Website-ontwerp', value: 'Website-ontwerp' },
-          { title: 'App-ontwerp', value: 'App-ontwerp' },
-          { title: 'Concept voorstel', value: 'Concept voorstel' },
-          { title: 'Visual & UI/UX design', value: 'Visual & UI/UX design' },
-          { title: 'Afstudeer opdracht', value: 'Afstudeer opdracht' },
-        ],
-      },
+      to: [{ type: 'workType' }],
       validation: (Rule) => Rule.required(),
     }),
     orderRankField({ type: 'project' }),
@@ -154,7 +143,6 @@ export const project = defineType({
   preview: {
     select: {
       title: 'organisation',
-      subtitle: 'workType',
       media: 'cardImage',
     },
   },
