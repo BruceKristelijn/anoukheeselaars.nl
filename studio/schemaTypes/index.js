@@ -9,6 +9,7 @@ import { comparisonSection } from './objects/comparisonSection.js'
 import { showcaseCardSection } from './objects/showcaseCardSection.js'
 import { analysisCardSection } from './objects/analysisCardSection.js'
 import { researchSection } from './objects/researchSection.js'
+import { textSection } from './objects/textSection.js'
 
 export const schemaTypes = [
   // Documents
@@ -22,4 +23,5 @@ export const schemaTypes = [
   showcaseCardSection,
   analysisCardSection,
   researchSection,
+  textSection,
 ]

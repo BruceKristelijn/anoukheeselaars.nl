@@ -51,7 +51,9 @@ const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0] {
       recommendations
     },
     methodsLabel,
-    methods
+    methods,
+    // textSection
+    body
   }
 }`
 

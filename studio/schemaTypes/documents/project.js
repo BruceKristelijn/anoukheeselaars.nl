@@ -146,6 +146,7 @@ export const project = defineType({
         defineArrayMember({ type: 'showcaseCardSection' }),
         defineArrayMember({ type: 'analysisCardSection' }),
         defineArrayMember({ type: 'researchSection' }),
+        defineArrayMember({ type: 'textSection' }),
       ],
     }),
   ],
