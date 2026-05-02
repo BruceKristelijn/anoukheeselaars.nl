@@ -69,7 +69,7 @@ const HOME_QUERY = `*[_type == "homePage"][0] {
   workSectionHeading,
   "featuredProjects": featuredProjects[] -> {
     "slug": slug.current,
-    workType,
+    "workType": workType->name,
     "cardImageUrl": cardImage.asset->url,
     "logoUrl": logo.asset->url
   },
