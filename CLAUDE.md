@@ -2,9 +2,27 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Monorepo Structure
+
+```
+/
+├── web/        ← Vue/Vite portfolio app (deploy target)
+│   ├── src/
+│   ├── public/
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+├── studio/     ← Sanity Studio (scaffold with: cd studio && npm create sanity@latest .)
+├── vercel.json ← Root Vercel config (points build at web/)
+└── CLAUDE.md
+```
+
 ## Commands
 
+Run from `web/`:
+
 ```bash
+cd web
 npm run dev      # Start Vite dev server
 npm run build    # Production build
 npm run preview  # Preview production build locally
@@ -18,7 +36,7 @@ Portfolio website for Anouk Heeselaars (UI/UX, visual design, branding). Built w
 
 ### Routing & Theming
 
-Each route in `src/routes.js` carries metadata that drives the site's dynamic theme:
+Each route in `web/src/routes.js` carries metadata that drives the site's dynamic theme:
 - `bgColor` — sets the `--body-bg` CSS custom property (background of the entire page)
 - `activeLinkColor` — sets `--active-url` (highlights the current nav link)
 
@@ -26,8 +44,8 @@ Each route in `src/routes.js` carries metadata that drives the site's dynamic th
 
 ### Views vs Components
 
-- `src/views/` — full-page route components (one per project + HomeView)
-- `src/components/` — shared layout pieces:
+- `web/src/views/` — full-page route components (one per project + HomeView)
+- `web/src/components/` — shared layout pieces:
   - `PageWrapper.vue` — standard layout shell for project detail pages
   - `MyWorkCard.vue` — card used in the home portfolio grid
   - `SimpleCard.vue` — generic card
@@ -38,8 +56,8 @@ Each route in `src/routes.js` carries metadata that drives the site's dynamic th
 
 ### SPA Routing
 
-`vercel.json` rewrites all paths to `index.html` to support Vue Router's HTML5 history mode. If deploying elsewhere, equivalent server-side rewrite rules are needed.
+Root `vercel.json` rewrites all paths to `index.html` to support Vue Router's HTML5 history mode. If deploying elsewhere, equivalent server-side rewrite rules are needed.
 
 ### Styles
 
-`src/style.css` imports Google Fonts (Poppins, Montserrat) and Tailwind. Global CSS variables (`--body-bg`, `--active-url`) are set dynamically per route. Tailwind is integrated via `@tailwindcss/vite` plugin (v4 approach — no `tailwind.config.js` needed).
+`web/src/style.css` imports Google Fonts (Poppins, Montserrat) and Tailwind. Global CSS variables (`--body-bg`, `--active-url`) are set dynamically per route. Tailwind is integrated via `@tailwindcss/vite` plugin (v4 approach — no `tailwind.config.js` needed).
